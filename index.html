@@ -2,43 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Planes contigo💕</title>
+  <title>Checklist Amorosa 💗</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom right, #ff4d4d, #ffb6c1); /* Rojo a rosado */
+      background: linear-gradient(to bottom right, #ff4d4d, #ffb6c1);
       font-family: Arial, sans-serif;
+      padding: 40px;
       color: #333;
     }
+
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      background: pink;
+      max-width: 600px;
+      margin: auto;
+      background: #ffe6f0;
       padding: 30px;
-      border-radius: 15px;
+      border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
+
     h1 {
-      color: #ff4d88;
       text-align: center;
+      color: #ff4d88;
     }
-    p {
+
+    .heart-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .heart-list li {
+      display: flex;
+      align-items: center;
       font-size: 18px;
-      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    .heart-list input[type="checkbox"] {
+      display: none;
+    }
+
+    .heart-label {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .heart-label::before {
+      content: "♡";
+      position: absolute;
+      left: 0;
+      color: #ff4d88;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    .heart-list input[type="checkbox"]:checked + .heart-label::before {
+      content: "❤️";
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <div class="container" contenteditable="true">
-    <h1>Hola mi amor</h1>
-    <p><strong>Cosas que quiero hacer contigo💗</strong></p>
-    <p>Ir a ver una pelicula que nos guste</p>
-    <img src="https://animalpolitico.com/_next/image?url=https%3A%2F%2Fap-cdn.sfo3.cdn.digitaloceanspaces.com%2Fuploads%2F2025%2F03%2Fmaterialists-estreno-pedro-pascal-chris-evans.jpg&w=3840&q=75" alt="Materialists" style="width:100%; max-width:400px; border-radius:10px;">
-
-    <p>Ir al mut, me ha salido mucho en tiktok jiji</p>
-    <img src="https://mut.cl/content/uploads/2023/12/MUT-FERIA-LIBRO-VIERNES_-30-1.png" alt="Materialists" style="width:100%; max-width:400px; border-radius:10px;">
-
+  <div class="container">
+    <h1>Cosas que quiero hacer contigo 💕</h1>
+    <ul class="heart-list">
+      <li>
+        <input type="checkbox" id="c1">
+        <label class="heart-label" for="c1">Ir a ver una película que nos guste (la de Pedrito Pascal)</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c2">
+        <label class="heart-label" for="c2">Ir al MUT, me ha salido mucho en TikTok jiji</label>
+      </li>
+      <li>
+        <input type="checkbox" id="c3">
+        <label class="heart-label" for="c3">Hacer un picnic con pastelitos y juguito</label>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
